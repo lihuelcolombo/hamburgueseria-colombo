@@ -34,11 +34,39 @@ function mostrarProductos(array){
     let btnAgregar = document.getElementById (`botonAgregar${producto.id}`)
     
     btnAgregar.addEventListener('click', () => {
-        console.log(producto.id)
+        agregarAlPedido(producto.id)
     } 
     )
+    }
+    )
+}
 
 
-    })
+function agregarAlPedido(id) {
+    
+    let agregarProducto = menu.find(item => item.id == id)
+    
+    carritoDeCompras.push(agregarProducto)
+
+    actualizarPedido()
+
+    let div = document.createElement('div')
+    div.className='productoEnCarrito'
+    div.innerHTML = `
+                    <p>${agregarProducto.nombre}</p>
+                    <p>Precio: $${agregarProducto.precio}</p>
+                    <p>Cantidad: ${agregarProducto.cantidad}</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+    `
+    contenedorCarrito.appendChild(div)    
+
+}
+
+
+
+
+function actualizarPedido() {
+    contadorCarrito.innerText = carritoDeCompras.length
+    precioTotal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad),0) 
 
 }
