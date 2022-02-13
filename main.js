@@ -26,6 +26,7 @@ class Pedido {
 
 // ===== VARIABLES =====
 
+
 const pedido = [];
 let cantidadItem = 0;
 let productoElegido = 0;

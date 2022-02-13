@@ -9,12 +9,8 @@ h1 {
     text-transform: uppercase;
 }
 
-ul{
-    list-style-type:none; 
-    
-}
-
-li {
-    font-size: 2em;
+/* div {
+    font-size: 1.2em;
     margin: 30px;
-}
+} */
+
