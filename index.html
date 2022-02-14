@@ -12,19 +12,25 @@
 </head>
 <body>
     <header>
-        <h1>Hamburguesería Brew</h1>
         <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+        <h1>Hamburguesería Brew</h1>        
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">CARRITO</a>
     </header>
 
-    
-    
+<main>
+    <div id="contenedor-productos"> 
+        <!-- Menu insertado por JS -->
+    </div>    
+</main>
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">CARRITO</a>
+
 
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4>Resumen del Pedido</h4>      
+<div id="modal1" class="modal modal-contenedor">
+    <div class="modal-carrito modal-content">
+        <h4>Resumen del Pedido</h4>
+        <!-- <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button> -->
+        <div id="carrito-contenedor">     
         <!-- <p>Producto 1</p>
         <p>Precio: $600</p>
         <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button> -->
@@ -34,15 +40,7 @@
         <a href="" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
-
-
-
-
-    <div id="contenedor-productos"> 
-        <!-- Menu insertado por JS -->
-    </div>
-
-
+</div>
 
 
 
