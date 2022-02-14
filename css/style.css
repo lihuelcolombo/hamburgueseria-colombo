@@ -47,18 +47,21 @@ h1 {
 
 #boton-carrito {
     border: none;
-    color: rgb(225, 76, 65);
-    font-size: 40px;
-    background-color: white;
-    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 40px;    
     padding: 10px 20px;
     transition: all .3s;
 }
-#boton-carrito:hover {
+/* #boton-carrito:hover {
     cursor: pointer;
     color: white;
     background-color: rgb(225, 76, 65);
-}
-#boton-carrito:focus {
+} */
+/* #boton-carrito:focus {
     outline: none;
+} */
+
+.contenedor-carrito-contador {
+    display: flex;
+    flex-direction: column;
 }
