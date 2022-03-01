@@ -25,17 +25,20 @@ mostrarProductos(menu)
 
 function mostrarProductos(array){
     array.forEach(producto => {
+
+        let {nombre, id} = producto;
+
         let div = document.createElement('div');
         div.classList = 'producto';
         div.innerHTML = `    <div class="row">
         <div class="col s12 m6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                    <span class="card-title">${producto.nombre}</span>
+                    <span class="card-title">${nombre}</span>
                     <p>Se acompaña con nuestras famosas papas fritas!</p>
                     </div>
                     <div class="card-action">
-                        <a id = "botonAgregar${producto.id}" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">+</i></a>                  
+                        <a id = "botonAgregar${id}" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">+</i></a>                  
                     </div>
                 </div>
             </div>
@@ -45,6 +48,21 @@ function mostrarProductos(array){
 
     let btnAgregar = document.getElementById (`botonAgregar${producto.id}`)
     
+
+    btnAgregar.addEventListener('click', () =>{
+
+        Toastify({
+            text:"Se añadió un nuevo plato a tu pedido",
+            duration: 3000,
+            gravity: 'bottom',
+            position: 'right',
+            style: {
+                    background: '#24a39d'
+                }
+        }).showToast();    
+    }) 
+
+
     btnAgregar.addEventListener('click', () => {
         agregarAlPedido(producto.id)
     } 
@@ -62,12 +80,14 @@ function agregarAlPedido(id) {
 
     actualizarPedido()
 
+    let { nombre , precio, cantidad,} = agregarProducto
+
     let div = document.createElement('div')
     div.classList='productoEnCarrito'
     div.innerHTML = `
-                    <p>${agregarProducto.nombre}</p>
-                    <p>Precio: $${agregarProducto.precio}</p>
-                    <p>Cantidad: ${agregarProducto.cantidad}</p>
+                    <p>${nombre}</p>
+                    <p>Precio: $${precio}</p>
+                    <p>Cantidad: ${cantidad}</p>
                     <button id="btnEliminar${agregarProducto.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
     `
     contenedorCarrito.appendChild(div)
