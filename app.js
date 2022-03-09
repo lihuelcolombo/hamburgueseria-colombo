@@ -21,7 +21,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
 )
 
 
-mostrarProductos(menu)
+const menu = []
+fetch ('./menu.json')
+    .then( (res) => res.json())
+    .then ( (data) => {
+        data.forEach(item => {
+            menu.push(item);
+        })
+        
+    })
+
+setTimeout (() => {
+    mostrarProductos(menu)
+},1000 )
+
+
+
 
 function mostrarProductos(array){
     array.forEach(producto => {
@@ -50,7 +65,6 @@ function mostrarProductos(array){
     
 
     btnAgregar.addEventListener('click', () =>{
-
         Toastify({
             text:"Se añadió un nuevo plato a tu pedido",
             duration: 3000,

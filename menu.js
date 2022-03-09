@@ -10,3 +10,30 @@ let menu = [
     {id: 9, nombre: "Pancho completo ($400)", precio: 400, cantidad: 1, subtotal: 0},
     
 ]
+
+
+// const menu = document.querySelector('#contenedor-productos')
+
+// fetch("./menu.json")
+//     .then((resp) => resp.json())
+//     .then((data) => {
+//         console.log(data);
+//         data.forEach(prod => {
+//             menu.push(item);
+//         })
+//     });
+    
+//     export {menu}
+
+// const menu = []
+
+// fetch ('/menu.json')
+//     .then ((resp) => resp.json())
+//     .then ((data) => {
+//         data.forEach(item => {
+//             menu.push(item);
+//         }) 
+        
+//     })
+
+//     export {menu}
