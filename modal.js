@@ -1,3 +1,10 @@
+// Materialize
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+});
+
+
 const carritoAbrir = document.getElementById('boton-carrito');
 const carritoCerrar = document.getElementById('carritoCerrar');
 
@@ -7,9 +14,9 @@ const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 carritoAbrir.addEventListener('click', ()=> {
     contenedorModal.classList.toggle('modal-active')
 })
-// carritoCerrar.addEventListener('click', ()=> {
-//     contenedorModal.classList.toggle('modal-active')
-// })
+carritoCerrar.addEventListener('click', ()=> {
+    contenedorModal.classList.toggle('modal-active')
+})
 modalCarrito.addEventListener('click',(e)=>{
     e.stopPropagation()
 })

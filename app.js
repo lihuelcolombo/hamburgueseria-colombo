@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems);
-        });
+// Carrito de compras
 
 let carritoDeCompras = []
+let carritoStorage = [];
+
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarrito = document.getElementById('carrito-contenedor');
@@ -16,13 +15,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
         carritoDeCompras = JSON.parse(localStorage.getItem("carrito"))
         actualizarPedido();
     }
-
 }
 )
 
-
+// Fetch del menu
 const menu = []
-fetch ('./menu.json')
+fetch ('menu.json')
     .then( (res) => res.json())
     .then ( (data) => {
         data.forEach(item => {
@@ -36,17 +34,47 @@ setTimeout (() => {
 },1000 )
 
 
-
+// Funciones
 
 function mostrarProductos(array){
+
+    if (localStorage.getItem("carrito")) {
+        carritoStorage = JSON.parse(localStorage.getItem("carrito"))        
+        carritoStorage.map((producto) => {
+            let div = document.createElement('div')
+    div.classList='productoEnCarrito'
+    div.innerHTML = `
+                    <p>${producto.nombre}</p>
+                    <p>Precio: $${producto.precio}</p>
+                    <p>Cantidad: ${producto.cantidad}</p>
+                    <button id="btnEliminar${producto.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+    `;
+    contenedorCarrito.appendChild(div);
+
+    actualizarPedido(carritoStorage)
+
+    let btnEliminar = document.getElementById (`btnEliminar${producto.id}`)
+    btnEliminar.addEventListener('click', () => {        
+        btnEliminar.parentElement.remove();
+        carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != producto.id)
+        actualizarPedido();
+    })
+
+
+    })
+    }
+
+
+    contenedorProductos.innerHTML = "";
+
     array.forEach(producto => {
 
-        let {nombre, id} = producto;
+        const {nombre, id} = producto;
 
         let div = document.createElement('div');
         div.classList = 'producto';
-        div.innerHTML = `    <div class="row">
-        <div class="col s12 m6">
+        div.innerHTML = `   
+        <div class="col s12 m6 l6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">${nombre}</span>
@@ -57,7 +85,6 @@ function mostrarProductos(array){
                     </div>
                 </div>
             </div>
-        </div>
     `
     contenedorProductos.appendChild(div);
 
@@ -94,7 +121,7 @@ function agregarAlPedido(id) {
 
     actualizarPedido()
 
-    let { nombre , precio, cantidad,} = agregarProducto
+    let { nombre , precio, cantidad} = agregarProducto
 
     let div = document.createElement('div')
     div.classList='productoEnCarrito'
@@ -121,14 +148,13 @@ function agregarAlPedido(id) {
 }
 
 
-
 function actualizarPedido() {
     contadorCarrito.innerText = carritoDeCompras.reduce((acc,el) => acc + el.cantidad, 0);
     precioTotal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad),0); 
 
     localStorage.setItem("carrito", JSON.stringify(carritoDeCompras))    
+    
 } 
-
 
 
 

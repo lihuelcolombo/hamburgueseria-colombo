@@ -1,9 +1,12 @@
+/* Main */
+
 body {
-    background-color: antiquewhite;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5% 10%;
 }
 
 header {
+    background-color: antiquewhite;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +20,14 @@ h1 {
     text-transform: uppercase;
 }
 
+/* Cards */
+
+.card-action {
+    display: flex;
+    justify-content: end;
+}
+
+/* Modals */
 
 .productoEnCarrito {
     border-left: 5px solid lightblue;
@@ -52,16 +63,23 @@ h1 {
     padding: 10px 20px;
     transition: all .3s;
 }
-/* #boton-carrito:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgb(225, 76, 65);
-} */
-/* #boton-carrito:focus {
-    outline: none;
-} */
 
 .contenedor-carrito-contador {
     display: flex;
     flex-direction: column;
 }
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.precioProducto {
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+}
+

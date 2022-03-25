@@ -12,37 +12,40 @@
     <title>Hamburguesería Brew</title>
 </head>
 <body>
+    
     <header>
         <h1>Hamburguesería Brew</h1> 
         <div class="contenedor-carrito-contador">
             <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">PEDIDO</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1"> VER PEDIDO</a>
         </div>
     </header>
 
 <main>
-    <div id="contenedor-productos"> 
-        <!-- Menu insertado por JS -->
-    </div>    
+    <div class="row">
+            <!-- Menu insertado por JS -->
+        <div id="contenedor-productos">        
+        </div>
+    </div>
 </main>
 
 
-
 <!-- Modal Structure -->
-<div id="modal1" class="modal modal-contenedor">
-    <div class="modal-carrito modal-content">
-        <h4>Resumen del Pedido</h4>
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal- carrito modal-content">
+        <h4>Resumen del Pedido</h4>        
         <!-- Insertado por JS -->
         <div id="carrito-contenedor">     
-        <!-- Insertado por JS -->
+        </div>
     </div>
     <div class="modal-footer">
-        <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-        <a href="" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+        <span class="precioProducto">Precio total: $<span id="precioTotal"></span></span>
+        <span><a href="https://www.mercadopago.com.ar/"target="_blank" class="modal-close waves-effect waves-green btn-flat">Aceptar e ir al pago</a></span>
+        <span><a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a></span>
+
+
     </div>
 </div>
-</div>
-
 
 
     
