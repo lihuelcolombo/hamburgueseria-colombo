@@ -1,22 +1,20 @@
 [
-    {"id": 1, "nombre": "Hamburguesa simple", "precio": 600, "cantidad": 1, "subtotal": 0},
+    {"id": 1, "nombre": "Cheeseburger", "precio": 600, "cantidad": 1, "subtotal": 0, "desc": "Clásica hamburguesa simple con doble feta de cheddar premium.", "img": "public/img/1.jpeg"},
 
-    {"id": 2, "nombre": "Hamburguesa con lechuga y tomate", "precio": 700, "cantidad": 1, "subtotal": 0},
+    {"id": 2, "nombre": "Argenta", "precio": 700, "cantidad": 1, "subtotal": 0, "desc": "Hamburguesa de 200 gr con queso dambo, lechuga y tomate. El equilibrio justo entre carne y vegetales.", "img": "public/img/2.jpeg"},
 
-    {"id": 3, "nombre": "Hamburguesa con queso", "precio": 700, "cantidad": 1, "subtotal": 0},
+    {"id": 3, "nombre": "Yankee", "precio": 800, "cantidad": 1, "subtotal": 0, "desc": "Triple hamburguesa, triple cheddar, crispy bacon. Solo para valientes.", "img": "public/img/3.jpeg"},
 
-    {"id": 4, "nombre": "Hamburguesa completa", "precio": 800, "cantidad": 1, "subtotal": 0},
+    {"id": 4, "nombre": "Eggert", "precio": 800, "cantidad": 1, "subtotal": 0, "desc": "Doble hamburguesa, cheddar, y huevo frito. Lo que recomendó el doc.", "img": "public/img/4.jpeg"},
 
-    {"id": 5, "nombre": "Hamburguesa vegana", "precio": 700, "cantidad": 1, "subtotal": 0},
+    {"id": 5, "nombre": "Chicken", "precio": 700, "cantidad": 1, "subtotal": 0, "desc": "Pechuga crispy, queso dambo, tomate, lechuga y coleslaw. No te vas a arrepentir.", "img": "public/img/5.jpeg"},
 
-    {"id": 6, "nombre": "Pancho simple", "precio": 200, "cantidad": 1, "subtotal": 0},
+    {"id": 6, "nombre": "Vegana", "precio": 700, "cantidad": 1, "subtotal": 0, "desc": "Medallon de lentejas y porotos negros, con portobellos, lechuga y tomate, condimentada con exquisita mayonesa vegana.", "img": "public/img/6.jpeg"},
 
-    {"id": 7, "nombre": "Pancho con lluvia de papas pay", "precio": 300, "cantidad": 1, "subtotal": 0},
+    {"id": 7, "nombre": "Pancho", "precio": 300, "cantidad": 1, "subtotal": 0, "desc": "Podés elegir 2 salsas o toppings.", "img": "public/img/7.jpg"},
 
-    {"id": 8, "nombre": "Pancho con jamon y queso", "precio": 300, "cantidad": 1, "subtotal": 0},
+    {"id": 8, "nombre": "Doble pancho", "precio": 400, "cantidad": 1, "subtotal": 0, "desc": "2 panchos. Podés elegir 2 salsas o toppings para cada uno.", "img": "public/img/8.jpg"},
     
-    {"id": 9, "nombre": "Pancho completo", "precio": 400, "cantidad": 1, "subtotal": 0}
+    {"id": 9, "nombre": "Triple pancho", "precio": 500, "cantidad": 1, "subtotal": 0, "desc": "Quien dice 2 dice 3. Podés elegir 2 salsas o toppings para cada uno.", "img": "public/img/9.jpg"}
     
 ]
-
-

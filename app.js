@@ -68,22 +68,30 @@ function mostrarProductos(array){
 
     array.forEach(producto => {
 
-        const {nombre, id, precio} = producto;
+        const {nombre, id, precio, desc, img} = producto;
 
         let div = document.createElement('div');
         div.classList = 'producto';
         div.innerHTML = `   
-        <div class="col s12 m6 l6">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">${nombre} - $${precio}</span>                    
-                    <p>Se acompaña con nuestras famosas papas fritas!</p>
-                    </div>
-                    <div class="card-action">
-                        <a id = "botonAgregar${id}" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">+</i></a>                  
-                    </div>
-                </div>
+        <div class="col s12 m6 l4">
+            <div class="card">
+            <div class="card-image">
+                <img src="${img}">
+                <span class="card-title">${nombre}</span>
+                
+                <a id="botonAgregar${id}" class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">+</i></a>
+                
             </div>
+            <div class="card-content">
+                <p>$${precio}</p>
+                <p>${desc}</p>
+                <p>Se acompaña con nuestras famosas papas fritas!</p>
+            </div>
+            </div>
+        </div>
+
+
+        
     `
     contenedorProductos.appendChild(div);
 
@@ -109,9 +117,11 @@ function mostrarProductos(array){
     })
 }
 
+
 function agregarAlPedido(id) {
     
     let agregarProducto = menu.find(item => item.id == id)
+    
     
     carritoDeCompras.push(agregarProducto);
 
@@ -151,3 +161,4 @@ function actualizarPedido() {
     localStorage.setItem("carrito", JSON.stringify(carritoDeCompras))    
     
 } 
+
