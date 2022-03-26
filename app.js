@@ -10,6 +10,7 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
 
+
 document.addEventListener("DOMContentLoaded", (e) => {
     if (localStorage.getItem("carrito")) {
         carritoDeCompras = JSON.parse(localStorage.getItem("carrito"))
@@ -59,8 +60,6 @@ function mostrarProductos(array){
         carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != producto.id)
         actualizarPedido();
     })
-
-
     })
     }
 
@@ -69,7 +68,7 @@ function mostrarProductos(array){
 
     array.forEach(producto => {
 
-        const {nombre, id} = producto;
+        const {nombre, id, precio} = producto;
 
         let div = document.createElement('div');
         div.classList = 'producto';
@@ -77,7 +76,7 @@ function mostrarProductos(array){
         <div class="col s12 m6 l6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                    <span class="card-title">${nombre}</span>
+                    <span class="card-title">${nombre} - $${precio}</span>                    
                     <p>Se acompaña con nuestras famosas papas fritas!</p>
                     </div>
                     <div class="card-action">
@@ -106,12 +105,9 @@ function mostrarProductos(array){
 
     btnAgregar.addEventListener('click', () => {
         agregarAlPedido(producto.id)
-    } 
-    )
-    }
-    )
+    })
+    })
 }
-
 
 function agregarAlPedido(id) {
     
@@ -155,10 +151,3 @@ function actualizarPedido() {
     localStorage.setItem("carrito", JSON.stringify(carritoDeCompras))    
     
 } 
-
-
-
-
-
-
-
