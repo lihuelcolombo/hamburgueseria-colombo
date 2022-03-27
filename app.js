@@ -83,7 +83,7 @@ function mostrarProductos(array){
                 
             </div>
             <div class="card-content">
-                <p>$${precio}</p>
+                <p class="precio-card">$${precio}</p>
                 <p>${desc}</p>
                 <p>Se acompaña con nuestras famosas papas fritas!</p>
             </div>

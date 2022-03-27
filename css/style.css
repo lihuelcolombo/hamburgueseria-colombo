@@ -27,6 +27,14 @@ h1 {
     justify-content: end;
 }
 
+.precio-card {
+    font-size: 2em;
+}
+
+.card {
+    min-height: 650px;    
+}
+
 /* Modals */
 
 .productoEnCarrito {
